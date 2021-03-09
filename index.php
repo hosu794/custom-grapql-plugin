@@ -20,11 +20,13 @@ use Table\FolderTypeTable\FolderTypeTable;
 add_filter('graphql_root_queries', function($fields) {
 
     array_push($fields['FolderType'], [
-        'type' => \WPGraphQL\Types::list_of( new FolderType() ),
+        'type' => \WPGraphQL\Types::list_of( (new FolderType)->instance()),
         'dddescription' => __( 'Get a list of FolderType', 'your-textdomain' ),
         'resolve' => function( $root, $args, $context, $info ) {
 
-             return FolderTypeTable::getItems();
+            $folderTypeTable = (new FolderTypeTable)->instance();
+
+            return $folderTypeTable->getItems();
         }
     ]);
 

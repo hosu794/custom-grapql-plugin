@@ -64,7 +64,7 @@ namespace CustomGrapqlQuery;
                 ];
 
                 //Pass the field throught the filters, etc provided by WPObjectType
-                return self::prepare_fields($fields, 'MediaType');
+                return self::prepare_fields($fields, 'FolderType');
             }
         }
 

@@ -20,7 +20,7 @@ class FolderTypeTable {
         echo "Connected succesfully <br />";
     }
 
-    static function getItems() {
+     function getItems() {
 
         $elements = [];
 
@@ -46,8 +46,6 @@ class FolderTypeTable {
     public function close() {
         $conn->close();
     }
-
-
 
 }
 
